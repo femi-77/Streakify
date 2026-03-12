@@ -28,8 +28,8 @@ public class HabitController {
         return habitService.getHabitByUser(userId);
     }
     @DeleteMapping("/habits/{id}")
-    public ResponseEntity<Void> deleteHabit(@PathVariable Long id){
+    public ResponseEntity<String> deleteHabit(@PathVariable Long id){
         habitService.deleteHabit(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Habit deleted ");
     }
 }
