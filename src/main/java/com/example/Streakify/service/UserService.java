@@ -9,7 +9,7 @@ import com.example.Streakify.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
+
 
 @Service
 public class UserService {
@@ -35,14 +35,15 @@ public class UserService {
                 .orElseThrow(()->new ResourceNotFoundException("User not found with id "+id));
         return convertToDTO(user);
     }
-    public List<UserResponseDTO> getAllUsers(){
-        return userRepository.findAll()
-                .stream()
-                .map(this::convertToDTO)
-                .toList();
-    }
+
+
     public void deleteUser(Long id){
-        userRepository.deleteById(id);
+
+        User user = userRepository.findById(id)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("User not found with id " + id));
+
+        userRepository.delete(user);
     }
 
     private UserResponseDTO convertToDTO(User user){
