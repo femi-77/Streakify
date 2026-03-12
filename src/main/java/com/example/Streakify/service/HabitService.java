@@ -3,6 +3,7 @@ package com.example.Streakify.service;
 import com.example.Streakify.dto.HabitRequestDTO;
 import com.example.Streakify.dto.HabitResponseDTO;
 import com.example.Streakify.exception.DuplicateResourceException;
+import com.example.Streakify.exception.ResourceNotFoundException;
 import com.example.Streakify.model.Habit;
 import com.example.Streakify.model.User;
 import com.example.Streakify.repository.HabitRepository;
@@ -39,13 +40,21 @@ public class HabitService {
     }
 
     public List<HabitResponseDTO> getHabitByUser(Long userId){
+        if(!userRepository.existsById(userId)){
+            throw new ResourceNotFoundException("User not found with id "+userId);
+        }
         List<Habit> habits= habitRepository.findByUserId(userId);
         return habits.stream()
                 .map(this::convertToDTO)
                 .toList();
     }
-    public void deleteHabit(Long habitId){
-        userRepository.deleteById(habitId);
+    public void deleteHabit(Long id){
+
+        Habit habit = habitRepository.findById(id)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Habit not found with id " + id));
+
+        habitRepository.delete(habit);
     }
 
     private HabitResponseDTO convertToDTO(Habit habit){
