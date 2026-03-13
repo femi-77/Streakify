@@ -47,7 +47,7 @@ Update **application.properties**
 ```
 spring.datasource.url=jdbc:postgresql://localhost:5432/streakify
 spring.datasource.username=postgres
-spring.datasource.password=yourpassword
+spring.datasource.password=postgres
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
@@ -107,58 +107,87 @@ http://localhost:8080
 
 ```
 Streakify
+Streakify
+│
+├── .idea
+│
+├── .mvn
+│   └── wrapper
+│
+├── database
+│   └── streakify.sql
+│
+├── postman
+│   └── Streakify.postman_collection.json
+│
+├── screenshot
 │
 ├── src
-│   └── main
-│       ├── java
-│       │   └── com.example.Streakify
-│       │       ├── controller
-│       │       │   ├── UserController.java
-│       │       │   ├── HabitController.java
-│       │       │   ├── HabitLogController.java
-│       │       │   ├── StreakController.java
-│       │       │   └── DashboardController.java
-│       │       │
-│       │       ├── service
-│       │       │   ├── UserService.java
-│       │       │   ├── HabitService.java
-│       │       │   ├── HabitLogService.java
-│       │       │   ├── StreakService.java
-│       │       │   └── DashboardService.java
-│       │       │
-│       │       ├── repository
-│       │       │   ├── UserRepository.java
-│       │       │   ├── HabitRepository.java
-│       │       │   └── HabitLogRepository.java
-│       │       │
-│       │       ├── model
-│       │       │   ├── User.java
-│       │       │   ├── Habit.java
-│       │       │   └── HabitLog.java
-│       │       │
-│       │       ├── dto
-│       │       │   ├── UserRequestDTO.java
-│       │       │   ├── UserResponseDTO.java
-│       │       │   ├── HabitRequestDTO.java
-│       │       │   ├── HabitResponseDTO.java
-│       │       │   ├── HabitLogRequestDTO.java
-│       │       │   ├── HabitLogResponseDTO.java
-│       │       │   ├── HabitLogGetDTO.java
-│       │       │   ├── StreakResponseDTO.java
-│       │       │   └── DashboardResponseDTO.java
-│       │       │
-│       │       └── StreakifyApplication.java
-│       │
-│       └── resources
-│           └── application.properties
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── example
+│   │   │           └── Streakify
+│   │   │               ├── controller
+│   │   │               │   ├── DashboardController.java
+│   │   │               │   ├── HabitController.java
+│   │   │               │   ├── HabitLogController.java
+│   │   │               │   ├── StreakController.java
+│   │   │               │   └── UserController.java
+│   │   │               │
+│   │   │               ├── dto
+│   │   │               │   ├── CurrentStreakItemDTO.java
+│   │   │               │   ├── DashboardResponseDTO.java
+│   │   │               │   ├── ErrorResponseDTO.java
+│   │   │               │   ├── HabitLogGetDTO.java
+│   │   │               │   ├── HabitLogRequestDTO.java
+│   │   │               │   ├── HabitLogResponseDTO.java
+│   │   │               │   ├── HabitRequestDTO.java
+│   │   │               │   ├── HabitResponseDTO.java
+│   │   │               │   ├── StreakResponseDTO.java
+│   │   │               │   ├── UserRequestDTO.java
+│   │   │               │   └── UserResponseDTO.java
+│   │   │               │
+│   │   │               ├── exception
+│   │   │               │   ├── BadRequestException.java
+│   │   │               │   ├── DuplicateResourceException.java
+│   │   │               │   ├── EmailAlreadyExistsException.java
+│   │   │               │   ├── GlobalExceptionHandler.java
+│   │   │               │   └── ResourceNotFoundException.java
+│   │   │               │
+│   │   │               ├── model
+│   │   │               │   ├── Habit.java
+│   │   │               │   ├── HabitLog.java
+│   │   │               │   └── User.java
+│   │   │               │
+│   │   │               ├── repository
+│   │   │               │   ├── HabitLogRepository.java
+│   │   │               │   ├── HabitRepository.java
+│   │   │               │   └── UserRepository.java
+│   │   │               │
+│   │   │               ├── service
+│   │   │               │   ├── DashboardService.java
+│   │   │               │   ├── HabitLogService.java
+│   │   │               │   ├── HabitService.java
+│   │   │               │   ├── StreakService.java
+│   │   │               │   └── UserService.java
+│   │   │               │
+│   │   │               └── StreakifyApplication.java
+│   │   │
+│   │   └── resources
+│   │       ├── static
+│   │       ├── templates
+│   │       └── application.properties
+│   │
+│   └── test
 │
-├── screenshots
-│   ├── create_user.png
-│   ├── get_user.png
-│   ├── create_habit.png
-│   ├── fetch_streak.png
-│   └── dashboard.png
+├── target
 │
+├── .gitattributes
+├── .gitignore
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
 ├── pom.xml
 └── README.md
 ```
