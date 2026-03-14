@@ -108,9 +108,6 @@ http://localhost:8080
 ```
 Streakify
 Streakify
-│
-├── .idea
-│
 ├── .mvn
 │   └── wrapper
 │
@@ -185,11 +182,11 @@ Streakify
 │
 ├── .gitattributes
 ├── .gitignore
-├── HELP.md
+├── pom.xml
 ├── mvnw
 ├── mvnw.cmd
-├── pom.xml
-└── README.md
+
+
 ```
 
 ---
