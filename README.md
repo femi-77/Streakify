@@ -47,7 +47,7 @@ Update **application.properties**
 ```
 spring.datasource.url=jdbc:postgresql://localhost:5432/streakify
 spring.datasource.username=postgres
-spring.datasource.password=postgres
+spring.datasource.password=your_db_password
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
