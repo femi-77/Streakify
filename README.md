@@ -8,7 +8,43 @@ Streakify is a backend habit tracking application designed to help users build c
 The application provides a structured backend using Spring Boot and PostgreSQL, enabling efficient habit tracking and analytics through RESTful APIs. The project follows a layered architecture to ensure clean code organization, scalability, and maintainability.
 
 ---
+#  Features
 
+- User Management
+  - Create, fetch, and delete users
+  - Unique email validation
+
+- Habit Management
+  - Create and delete habits
+  - View all habits for a user
+
+- Habit Tracking
+  - Log daily habit completion
+  - Prevent duplicate or future date entries
+
+- Streak Calculation
+  - Tracks current streak
+  - Calculates longest streak
+
+- Dashboard
+  - Overview of user habits
+  - Displays streak summaries and progress
+
+- Validation & Error Handling
+  - Field validation (e.g., "Name is required", "Invalid email")
+  - Custom exception handling for:
+    - Duplicate email
+    - Resource not found
+    - Invalid inputs
+
+- RESTful API Design
+  - Clean and structured endpoints
+  - Proper HTTP methods (GET, POST, PUT, DELETE)
+
+- Layered Architecture
+  - Controller → Service → Repository separation
+
+---
 # Tech Stack
 
 * Java
@@ -187,6 +223,7 @@ Streakify
 ├── pom.xml
 ├── mvnw
 ├── mvnw.cmd
+├── README.md
 
 
 ```
