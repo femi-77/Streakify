@@ -24,7 +24,9 @@ The application provides a structured backend using Spring Boot and PostgreSQL, 
 
 ### 1. Clone the repository
 
-```
+[View Project](https://github.com/femi-77/Streakify)
+
+```bash
 git clone https://github.com/femi-77/Streakify.git
 cd Streakify
 ```
@@ -309,4 +311,7 @@ Day 3
 ### Duplicate Log
 <img width="1087" height="870" alt="Screenshot 2026-03-12 104355" src="https://github.com/user-attachments/assets/1bf08ff0-9195-4777-a3c5-c15a56461fb1" />
 
+# Author
 
+Femi Sunil  
+Final Year B.Tech CSE Student  
