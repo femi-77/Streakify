@@ -140,58 +140,7 @@ http://localhost:8080
 | completed | BOOLEAN                          |
 
 ---
-#  Sample API
 
-### Create User
-POST /users
-
-Request:
-{
-  "name": "Femi",
-  "email": "femi@gmail.com"
-}
-
-Response:
-{
-  "id": 1,
-  "name": "Femi",
-  "email": "femi@gmail.com"
-}
-
-
-
-### Create Habit
-POST /habits
-
-Request:
-{
-  "userId": 1,
-  "habitName": "Exercise"
-}
-
-Response:
-{
-  "id": 1,
-  "habitName": "Exercise"
-}
-
-
-### Get Streak
-GET /habits/{id}/streak
-
-Response:
-{
-  "currentStreak": 3,"longestStreak": 5
-}
-
-
-
-### Error Response
-{
-  "message": "Invalid email format"
-}
-
----
 # Project Structure
 
 ```
@@ -314,6 +263,58 @@ Streakify
 ### Dashboard API
 
 * GET /users/{userId}/dashboard
+---
+#  Sample API
+
+### Create User
+POST /users
+
+Request:
+{
+  "name": "Femi",
+  "email": "femi@gmail.com"
+}
+
+Response:
+{
+  "id": 1,
+  "name": "Femi",
+  "email": "femi@gmail.com"
+}
+
+
+
+### Create Habit
+POST /habits
+
+Request:
+{
+  "userId": 1,
+  "habitName": "Exercise"
+}
+
+Response:
+{
+  "id": 1,
+  "habitName": "Exercise"
+}
+
+
+### Get Streak
+GET /habits/{id}/streak
+
+Response:
+{
+  "currentStreak": 3,"longestStreak": 5
+}
+
+
+
+### Error Response
+{
+  "message": "Invalid email format"
+}
+
 ---
 
 # Screenshots
